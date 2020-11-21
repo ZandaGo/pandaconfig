@@ -115,7 +115,7 @@ set shell=zsh
 let mapleader = ','
 
 " 关闭欢迎页面
-set shortmess=atI
+"set shortmess=atI
 "被分割窗口之間顯示空白
 set fillchars=vert:/
 
