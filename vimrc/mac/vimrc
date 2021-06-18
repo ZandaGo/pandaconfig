@@ -31,8 +31,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " nerdtree中看git版本信息
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
-" 代码自动补全(需要额外配置）
-Plugin 'Valloric/YouCompleteMe'
 " 下面两个配合 生成代码片段 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -404,7 +402,7 @@ imap <D-f> <ESC>:CtrlSF <C-R>=expand("<cword>")<CR>
 vnoremap <D-f>  y :CtrlSF"<C-R>=escape(@", '\\/.*$^~[]()"')<CR>"
 
 " Commond e 显示/关闭 NERDTree
-autocmd VimEnter * NERDTree " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
+"autocmd VimEnter * NERDTree " 在 vim 启动的时候默认开启 NERDTree（autocmd 可以缩写为 au）
 let NERDTreeShowBookmarks=1 " 当打开 NERDTree 窗口时，自动显示 Bookmarks
 let NERDTreeWinPos="right" " 将 NERDTree 的窗口设置在 vim 窗口的右侧（默认为左侧）
 map <D-e> :NERDTreeTabsToggle<CR>
@@ -671,54 +669,6 @@ command! CO CtrlSFOpen
 let g:ctrlsf_winsize = '30%'
 let g:ctrlsf_auto_close = 1
 let g:ctrlsf_ignore_dir = ['vendor', 'bower_components', 'node_modules']
-
-" YouCompleteMe 自动补全
-" preview window settiing
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_completion = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-" typing 2 chars
-let g:ycm_min_num_of_chars_for_completion = 2
-" Completion when typing inside comments
-let g:ycm_complete_in_comments = 1  
-" Query the UltiSnips plugin
-let g:ycm_use_ultisnips_completer = 1 
-" Collect identifiers from strings and comments and tag fiels
-let g:ycm_collect_identifiers_from_comments_and_strings = 1   
-let g:ycm_collect_identifiers_from_tags_files = 1
-" some symbols
-let g:ycm_error_symbol = '>>'
-let g:ycm_warning_symbol = '>*'
-" Specifies Python interpreter to run jedi
-let g:ycm_python_binary_path = 'python3'
-" Seed its identifier database
-" let g:ycm_seed_identifiers_with_syntax=1
-" youcompleteme select keys
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-" Where GoTo* commands result should be opened, same-buffer
-let g:ycm_goto_buffer_command = 'horizontal-split'
-" nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
-" ,jd
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-" ,gd
-nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
-" ycm 配置
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
-" blacklist
-let g:ycm_filetype_blacklist = {
-    \ 'gitcommit' : 1,
-    \ 'tagbar' : 1,
-    \ 'qf' : 1,
-    \ 'notes' : 1,
-    \ 'markdown' : 1,
-    \ 'unite' : 1,
-    \ 'text' : 1,
-    \ 'vimwiki' : 1,
-    \ 'pandoc' : 1,
-    \ 'infolog' : 1,
-    \ 'mail' : 1
-    \}
 
 
 " 代码片段
